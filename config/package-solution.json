@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "bi-panel-client-side-solution",
+    "id": "9af8bb5f-d4d9-48d8-bac9-637b21cc769f",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "bi-panel description"
+      },
+      "longDescription": {
+        "default": "bi-panel description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "bi-panel Feature",
+        "description": "The feature that activates elements of the bi-panel solution.",
+        "id": "ed7b7b20-0427-4817-9560-6a55b2b8cde2",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/bi-panel.sppkg"
+  }
+}

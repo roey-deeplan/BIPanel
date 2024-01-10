@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.17.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "bi-panel",
+    "libraryId": "9af8bb5f-d4d9-48d8-bac9-637b21cc769f",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "bi-panel",
+    "solutionShortDescription": "bi-panel description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
