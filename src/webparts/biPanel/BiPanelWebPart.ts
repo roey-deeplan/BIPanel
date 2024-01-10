@@ -7,29 +7,30 @@ import {
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
+import { PropertyFieldListPicker, PropertyFieldListPickerOrderBy } from '@pnp/spfx-property-controls/lib/PropertyFieldListPicker';
 
 import * as strings from 'BiPanelWebPartStrings';
 import BiPanel from './components/BiPanel';
 import { IBiPanelProps } from './components/IBiPanelProps';
 
+const { solution } = require("../../../config/package-solution.json");
 export interface IBiPanelWebPartProps {
   description: string;
+  listsData: string;
+  PanelName: string;
 }
 
 export default class BiPanelWebPart extends BaseClientSideWebPart<IBiPanelWebPartProps> {
-
-  private _isDarkTheme: boolean = false;
-  private _environmentMessage: string = '';
 
   public render(): void {
     const element: React.ReactElement<IBiPanelProps> = React.createElement(
       BiPanel,
       {
         description: this.properties.description,
-        isDarkTheme: this._isDarkTheme,
-        environmentMessage: this._environmentMessage,
-        hasTeamsContext: !!this.context.sdks.microsoftTeams,
-        userDisplayName: this.context.pageContext.user.displayName
+        WebUri: this.context.pageContext.web.absoluteUrl,
+        listsData: this.properties.listsData,
+        PanelName: this.properties.PanelName,
+        context: this.context
       }
     );
 
@@ -38,7 +39,6 @@ export default class BiPanelWebPart extends BaseClientSideWebPart<IBiPanelWebPar
 
   protected onInit(): Promise<void> {
     return this._getEnvironmentMessage().then(message => {
-      this._environmentMessage = message;
     });
   }
 
@@ -76,7 +76,6 @@ export default class BiPanelWebPart extends BaseClientSideWebPart<IBiPanelWebPar
       return;
     }
 
-    this._isDarkTheme = !!currentTheme.isInverted;
     const {
       semanticColors
     } = currentTheme;
@@ -94,7 +93,7 @@ export default class BiPanelWebPart extends BaseClientSideWebPart<IBiPanelWebPar
   }
 
   protected get dataVersion(): Version {
-    return Version.parse('1.0');
+    return Version.parse(solution.version);
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -110,6 +109,21 @@ export default class BiPanelWebPart extends BaseClientSideWebPart<IBiPanelWebPar
               groupFields: [
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
+                }),
+                PropertyFieldListPicker('listsData', {
+                  label: 'Select a list',
+                  selectedList: this.properties.listsData,
+                  includeHidden: false,
+                  orderBy: PropertyFieldListPickerOrderBy.Title,
+                  disabled: false,
+                  onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),
+                  properties: this.properties,
+                  context: this.context as any,
+                  deferredValidationTime: 0,
+                  key: 'listPickerFieldId'
+                }),
+                PropertyPaneTextField('PanelName', {
+                  label: "Panel Name"
                 })
               ]
             }

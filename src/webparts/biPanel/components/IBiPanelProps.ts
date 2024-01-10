@@ -1,7 +1,7 @@
 export interface IBiPanelProps {
   description: string;
-  isDarkTheme: boolean;
-  environmentMessage: string;
-  hasTeamsContext: boolean;
-  userDisplayName: string;
+  WebUri: string;
+  listsData: string;
+  PanelName: string;
+  context: any;
 }
