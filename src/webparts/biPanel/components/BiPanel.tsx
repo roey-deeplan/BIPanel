@@ -97,7 +97,6 @@ export default class BiPanel extends React.Component<IBiPanelProps, IBiPanelStat
             <div className='MainPanel'>
               <section className='BiNav' style={{maxHeight: "750px", overflow: "auto", direction:"rtl" }}>
                 <ul className='BiNavList'>
-
                   {this.state.ListOfReports.map(({ ID, Title, Image, BILink }) => (
                     <li className='BiNavItem' key={ID} onClick={() => this.ChangeIframe(BILink)}>
                       <div className='BiNavItemImg'>

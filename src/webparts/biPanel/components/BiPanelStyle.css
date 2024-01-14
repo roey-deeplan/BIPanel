@@ -49,7 +49,7 @@ ul.BiNavList {
     flex-direction: column;
     width: 100%;
     padding: 0px;
-    
+
 }
 
 .BiNavItemImg {
@@ -66,28 +66,36 @@ li.BiNavItem {
 }
 
 @keyframes bounce {
-    0%, 100%, 20%, 50%, 80% {
-      transform: translateY(0);
+
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        transform: translateY(0);
     }
+
     40% {
-      transform: translateY(-20px);
+        transform: translateY(-20px);
     }
+
     60% {
-      transform: translateY(-15px);
+        transform: translateY(-15px);
     }
-  }
-  
-  .BiNavItem:hover {
+}
+
+.BiNavItem:hover {
     animation: bounce 0.8s ease;
-  }
-  
+}
+
 
 .BiNavItemImg img {
-    width: 100px;  
-    height: 100px; 
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
 }
+
 
 .BiNavItem .BiNavItemText {
     display: block;
@@ -109,6 +117,15 @@ li.BiNavItem {
     overflow: hidden;
 }
 
+/* 
+.BiNavItem .BiNavItemText:hover {
+    background: -webkit-linear-gradient(to left, #2f4640 0%, #2f4640 100%);
+    background: -moz-linear-gradient(to left, #2f4640 0%, #2f4640 100%);
+    background: linear-gradient(to left, #2f4640 0%, #2f4640 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+
 .BiReport {
     display: block;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -122,20 +139,20 @@ li.BiNavItem {
 /* This targets the scrollbar within elements of class 'Scroolbar-style-2' */
 .BiNav::-webkit-scrollbar {
     width: 0.4em;
-  }
-  
-  .BiNav::-webkit-scrollbar-track {
+}
+
+.BiNav::-webkit-scrollbar-track {
     background: #f1f1f1;
-  }
-  
-  .BiNav::-webkit-scrollbar-thumb {
+}
+
+.BiNav::-webkit-scrollbar-thumb {
     background-color: #41a78e !important;
-  }
-  
-  .BiNav::-webkit-scrollbar-thumb:hover {
+}
+
+.BiNav::-webkit-scrollbar-thumb:hover {
     background: #41a78e !important;
-  }
-  
+}
+
 
 /* Spinner */
 
@@ -211,10 +228,12 @@ li.BiNavItem {
         top: 0;
         transform: rotate(0deg);
     }
+
     50% {
         top: -4em;
         transform: rotate(-180deg);
     }
+
     100% {
         top: 0;
         transform: rotate(-360deg);
