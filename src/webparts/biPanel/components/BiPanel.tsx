@@ -100,7 +100,7 @@ export default class BiPanel extends React.Component<IBiPanelProps, IBiPanelStat
                   {this.state.ListOfReports.map(({ ID, Title, Image, BILink }) => (
                     <li className='BiNavItem' key={ID} onClick={() => this.ChangeIframe(BILink)}>
                       <div className='BiNavItemImg'>
-                        {Image && <img src={this.ParseImage(Image)} alt={Title} />}
+                        {Image && <img className="imgClass"src={this.ParseImage(Image)} alt={Title} />}
                       </div>
                       <div className='BiNavItemText'>{Title}</div>
                     </li>

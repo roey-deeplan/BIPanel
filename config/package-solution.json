@@ -3,7 +3,7 @@
   "solution": {
     "name": "bi-panel-client-side-solution",
     "id": "9af8bb5f-d4d9-48d8-bac9-637b21cc769f",
-    "version": "1.0.0.5",
+    "version": "1.0.0.6",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
