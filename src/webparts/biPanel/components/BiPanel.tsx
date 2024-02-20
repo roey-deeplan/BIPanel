@@ -72,7 +72,7 @@ export default class BiPanel extends React.Component<IBiPanelProps, IBiPanelStat
 
   public render(): React.ReactElement<IBiPanelProps> {
     return (
-      <div className={styles.biPanel}>
+      <div className={styles.biPanel} style={{ direction: 'ltr' }}>
         <div className="EONewFormContainer">
           {this.state.IsLoading ?
             <div className='SpinnerComp'>
@@ -95,12 +95,12 @@ export default class BiPanel extends React.Component<IBiPanelProps, IBiPanelStat
             null}
           {!this.state.IsLoading ?
             <div className='MainPanel'>
-              <section className='BiNav' style={{maxHeight: "750px", overflow: "auto", direction:"rtl" }}>
+              <section className='BiNav' style={{ maxHeight: "750px", overflow: "auto", direction: "rtl" }}>
                 <ul className='BiNavList'>
                   {this.state.ListOfReports.map(({ ID, Title, Image, BILink }) => (
                     <li className='BiNavItem' key={ID} onClick={() => this.ChangeIframe(BILink)}>
                       <div className='BiNavItemImg'>
-                        {Image && <img className="imgClass"src={this.ParseImage(Image)} alt={Title} />}
+                        {Image && <img className="imgClass" src={this.ParseImage(Image)} alt={Title} />}
                       </div>
                       <div className='BiNavItemText'>{Title}</div>
                     </li>
